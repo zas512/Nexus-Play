@@ -1,11 +1,12 @@
-import AnimatedGameCard from "./AnimatedGameCard";
+import AnimatedGameCard from './AnimatedGameCard';
+import Chess from '@/assets/chess.png';
+import Ludo from '@/assets/ludo.png';
+import TicTac from '@/assets/tictac.png';
 
 const games = [
-  { id: "tictactoe", name: "Tic Tac Toe", icon: "❌⭕" },
-  { id: "chess", name: "Chess", icon: "♟️" },
-  { id: "fourinrow", name: "Four in a Row", icon: "🔴🟡" },
-  { id: "checkers", name: "Checkers", icon: "🔴⚫" },
-  { id: "connectfour", name: "Connect Four", icon: "🔵🔴" },
+  { id: 1, name: 'Tic Tac Toe', icon: TicTac, href: '/tictactoe' },
+  { id: 2, name: 'Chess', icon: Chess, href: '/chess' },
+  { id: 3, name: 'Ludo', icon: Ludo, href: '/ludo' },
 ];
 
 export default async function GameGrid() {

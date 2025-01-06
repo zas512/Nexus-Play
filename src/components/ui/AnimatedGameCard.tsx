@@ -1,19 +1,21 @@
-"use client";
-import Link from "next/link";
+import { StaticImageData } from 'next/image';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface GameCardProps {
-  game: { id: string; name: string; icon: string };
+  game: { id: number; name: string; icon: StaticImageData, href: string };
 }
 
 export default function AnimatedGameCard(props: Readonly<GameCardProps>) {
   const { game } = props;
 
   return (
-    <Link href={"/api/auth/signin"}>
-      <div className="bg-white/30 p-6 rounded-lg hover:shadow-xl cursor-pointer border border-transparent hover:border-white flex flex-col items-center justify-center">
-        <div className="text-4xl mb-2">{game.icon}</div>
-        <h2 className="text-xl font-bold text-primary">{game.name}</h2>
-      </div>
+    <Link href={game.href}
+      className="bg-white/30 p-6 rounded-lg hover:shadow-xl cursor-pointer border border-transparent hover:border-white
+      flex flex-col items-center justify-center">
+      <Image src={game.icon} alt={''} width={60} className="text-4xl mb-2" />
+      <h2 className="text-xl font-bold text-primary">{game.name}</h2>
     </Link>
-  );
+  )
+    ;
 }

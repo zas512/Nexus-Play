@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 type Player = 'X' | 'O' | null
 
-export default function TicTacToe() {
+const TicTacToe = () => {
   const [board, setBoard] = useState<Player[]>(Array(9).fill(null));
   const [currentPlayer, setCurrentPlayer] = useState<'X' | 'O'>('X');
 
@@ -48,7 +48,7 @@ export default function TicTacToe() {
       </div>
     </motion.div>
   );
-}
+};
 
 function calculateWinner(squares: Player[]): Player {
   const lines = [
@@ -70,3 +70,4 @@ function calculateWinner(squares: Player[]): Player {
   return null;
 }
 
+export default TicTacToe;
